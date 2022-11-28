@@ -3,7 +3,7 @@
 }
 
 html {
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Karla', sans-serif;
     font-size: 62.5%;
 }
 
@@ -14,7 +14,8 @@ body {
 nav {
     position: fixed;
     height: 3rem;
-    background-color: aquamarine;
+    background-color: beige;
+    border-bottom: 1px dashed black;
     display: flex;
     align-items: center;
     width: 100%;
