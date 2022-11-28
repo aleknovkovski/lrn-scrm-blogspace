@@ -1,14 +1,31 @@
-html {
-    font-family: sans-serif;
+* {
+    box-sizing: border-box;
 }
 
-/**
- Challenge:
+html {
+    font-family: 'Roboto', sans-serif;
+    font-size: 62.5%;
+}
 
- Style it up!
+body {
+    font-size: 1.6rem;
+}
 
- * Add a short (~30px height) fixed navbar at the top with the text "BlogSpace". Remember to pad the top of your content so it doesn't get hidden behind the navbar.
- * Add a font from Google Fonts.
- * Any other styling you want to make it look nice!
+nav {
+    position: fixed;
+    height: 3rem;
+    background-color: aquamarine;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 1em;
+}
 
- */
+h1 {
+    font-size: 2rem;
+}
+
+#blog-posts {
+    padding-top: 3rem;
+    padding-left: 1em;
+}
