@@ -34,3 +34,15 @@ main {
 #blog-posts {
     padding: 0 1.3rem;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5em;
+    gap: 1em;
+}
+
+textarea {
+    resize: none;
+    min-height: 10rem;
+}
