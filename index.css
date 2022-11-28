@@ -13,7 +13,7 @@ body {
 
 nav {
     position: fixed;
-    height: 3rem;
+    height: 4rem;
     background-color: beige;
     border-bottom: 1px dashed black;
     display: flex;
@@ -27,6 +27,5 @@ h1 {
 }
 
 #blog-posts {
-    padding-top: 3rem;
-    padding-left: 1em;
+    padding: 4rem 1.3em 1.3em;
 }
