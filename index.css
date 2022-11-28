@@ -20,6 +20,7 @@ nav {
     align-items: center;
     width: 100%;
     padding: 1em;
+    box-shadow: rgba(17, 12, 46, 0.25) 0px 4px 90px 0px;
 }
 
 h1 {
