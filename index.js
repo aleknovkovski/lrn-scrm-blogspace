@@ -1,16 +1,20 @@
+let postsArr = []
+
+function render() {
+    let markup = ""
+    postsArr.map((post)=> {
+        markup += `
+        <h2>${post.title}</h2>
+        <p>${post.body}</p>`
+    })
+    document.getElementById('blog-posts').innerHTML = markup
+}
+
 fetch("https://apis.scrimba.com/jsonplaceholder/posts")
 .then(res => res.json())
 .then(js => {
-    const posts = js.slice(0, 5)
-    console.log(posts)
-    let markup = ""
-    posts.map((post)=> {
-        markup += `
-        <h2>${post.title}</h2>
-        <p>${post.body}</p>
-        `
-    })
-    document.getElementById('blog-posts').innerHTML = markup
+    postsArr = js.slice(0, 5);
+    render()
 })
 
 const form = document.getElementById('new-post-form')
@@ -22,7 +26,7 @@ form.addEventListener('submit', (e)=> {
 
     const newBlogPost = {
         'title': blogTitle,
-        'content': blogContent
+        'body': blogContent
     }
     fetch('https://apis.scrimba.com/jsonplaceholder/posts', {
         method: "POST",
@@ -32,14 +36,7 @@ form.addEventListener('submit', (e)=> {
         }
     }).then(r => r.json()).then(js => {
         console.log(js)
-
-        let markup = document.getElementById("blog-posts").innerHTML
-
-        newMarkup = (`
-        <h2>${js.title}</h2>
-        <p>${js.content}</p>
-        ` + markup)
-
-        document.getElementById("blog-posts").innerHTML = newMarkup
+        postsArr.unshift({'title': js.title, 'body': js.body})
+        render()
     })
 })
