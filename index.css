@@ -43,9 +43,30 @@ form {
     background-color: blanchedalmond;
     border-bottom: 1px dashed black;
     box-shadow: rgba(17, 12, 46, 0.12) 0px 4px 120px 0px;
+    font-size: 2rem;
 }
 
 textarea {
     resize: none;
     min-height: 10rem;
+}
+
+button {
+    cursor: pointer;
+    padding: 0.5em;
+    background-color: whitesmoke;
+    border: 1px dashed black;
+}
+
+button:hover {
+    color: #3f3f3f;
+    border-color: #3f3f3f;
+}
+
+label, button {
+    font-weight: 500;
+}
+
+input, textarea {
+    padding: 0.5em;
 }
