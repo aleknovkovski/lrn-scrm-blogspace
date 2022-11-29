@@ -30,5 +30,16 @@ form.addEventListener('submit', (e)=> {
         headers: {
             'content-type': 'application/json'
         }
-    }).then(r => r.json()).then(js => console.log(js))
+    }).then(r => r.json()).then(js => {
+        console.log(js)
+
+        let markup = document.getElementById("blog-posts").innerHTML
+
+        newMarkup = (`
+        <h2>${js.title}</h2>
+        <p>${js.content}</p>
+        ` + markup)
+
+        document.getElementById("blog-posts").innerHTML = newMarkup
+    })
 })
