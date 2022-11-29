@@ -23,13 +23,17 @@ const form = document.getElementById('new-post-form')
 form.addEventListener('submit', (e)=> {
     e.preventDefault();
 
-    const blogTitle = document.getElementById('blog-title').value;
-    const blogContent = document.getElementById('blog-content').value;
+    const blogTitle = document.getElementById('blog-title');
+    const blogContent = document.getElementById('blog-content');
 
     const newBlogPost = {
-        'title': blogTitle,
-        'body': blogContent
+        'title': blogTitle.value,
+        'body': blogContent.value
     }
+
+    blogTitle.value = ""
+    blogContent.value = ""
+
     fetch('https://apis.scrimba.com/jsonplaceholder/posts', {
         method: "POST",
         body: JSON.stringify(newBlogPost),
@@ -41,4 +45,6 @@ form.addEventListener('submit', (e)=> {
         postsArr.unshift({'title': js.title, 'body': js.body})
         render()
     })
+
+
 })
