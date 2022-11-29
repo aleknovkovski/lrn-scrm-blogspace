@@ -4,8 +4,10 @@ function render() {
     let markup = ""
     postsArr.map((post)=> {
         markup += `
-        <h2>${post.title}</h2>
-        <p>${post.body}</p>`
+        <div class="blog-post">
+            <h2>${post.title}</h2>
+            <p>${post.body}</p>
+        </div>`
     })
     document.getElementById('blog-posts').innerHTML = markup
 }
