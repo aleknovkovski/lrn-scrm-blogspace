@@ -13,7 +13,19 @@ fetch("https://apis.scrimba.com/jsonplaceholder/posts")
     document.getElementById('blog-posts').innerHTML = markup
 })
 
+const form = document.getElementById('new-post-form')
+form.addEventListener('submit', (e)=> {
+    e.preventDefault();
 
+    const blogTitle = document.getElementById('blog-title').value;
+    const blogContent = document.getElementById('blog-content').value;
+
+    const newBlogPost = {
+        'title': blogTitle,
+        'content': blogContent
+    }
+    console.log(newBlogPost)
+})
 /**
  Challenge:
 
