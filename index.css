@@ -40,6 +40,9 @@ form {
     flex-direction: column;
     padding: 1.5em;
     gap: 1em;
+    background-color: blanchedalmond;
+    border-bottom: 1px dashed black;
+    box-shadow: rgba(17, 12, 46, 0.12) 0px 4px 120px 0px;
 }
 
 textarea {
