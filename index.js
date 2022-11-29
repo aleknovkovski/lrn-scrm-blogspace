@@ -24,7 +24,13 @@ form.addEventListener('submit', (e)=> {
         'title': blogTitle,
         'content': blogContent
     }
-    console.log(newBlogPost)
+    fetch('https://apis.scrimba.com/jsonplaceholder/posts', {
+        method: "POST",
+        body: JSON.stringify(newBlogPost),
+        headers: {
+            'content-type': 'application/json'
+        }
+    }).then(r => r.json()).then(js => console.log(js))
 })
 /**
  * Challenge: Send this off to the server!
