@@ -1,5 +1,7 @@
-let postsArr = []
+const blogTitleEl = document.getElementById('blog-title');
+const blogContentEl = document.getElementById('blog-content');
 
+let postsArr = []
 function render() {
     let markup = ""
     postsArr.map((post)=> {
@@ -10,29 +12,27 @@ function render() {
         </div>`
     })
     document.getElementById('blog-posts').innerHTML = markup
-}
 
+}
 fetch("https://apis.scrimba.com/jsonplaceholder/posts")
 .then(res => res.json())
 .then(js => {
     postsArr = js.slice(0, 5);
     render()
-})
 
+})
 const form = document.getElementById('new-post-form')
 form.addEventListener('submit', (e)=> {
+
     e.preventDefault();
 
-    const blogTitle = document.getElementById('blog-title');
-    const blogContent = document.getElementById('blog-content');
-
     const newBlogPost = {
-        'title': blogTitle.value,
-        'body': blogContent.value
+        'title': blogTitleEl.value,
+        'body': blogContentEl.value
     }
 
-    blogTitle.value = ""
-    blogContent.value = ""
+    blogTitleEl.value = ""
+    blogContentEl.value = ""
 
     fetch('https://apis.scrimba.com/jsonplaceholder/posts', {
         method: "POST",
